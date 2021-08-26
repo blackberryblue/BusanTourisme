@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.com.busantourisme.InitMethod;
 import com.com.busantourisme.R;
 import com.com.busantourisme.controller.AuthController;
 import com.com.busantourisme.controller.Dto.CMRespDto;
 import com.com.busantourisme.controller.Dto.JoinDto;
-import com.com.busantourisme.helper.CustomBottomActivity;
 import com.com.busantourisme.model.User;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -19,7 +20,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class JoinActivity extends CustomBottomActivity implements InitMethod {
+public class JoinActivity extends AppCompatActivity implements InitMethod {
 
     private JoinActivity mContext = JoinActivity.this;
     private static final String TAG = "JoinActivity";

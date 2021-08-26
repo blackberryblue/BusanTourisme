@@ -1,4 +1,4 @@
-package com.com.busantourisme.helper;
+package com.com.busantourisme.view.bar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -12,7 +12,7 @@ import android.view.MenuItem;
 
 import com.com.busantourisme.R;
 
-public class CustomAppBarActivity extends AppCompatActivity {
+public class AppBarActivity extends AppCompatActivity {
 
     private static final String TAG = "CustomAppBarActivity";
 

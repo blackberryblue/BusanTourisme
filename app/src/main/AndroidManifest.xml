@@ -12,11 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BusanTourisme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.auth.LoginActivity"></activity>
-        <activity android:name=".view.post.adapter.MainActivity" />
-        <activity android:name=".helper.CustomBottomActivity" />
-        <activity android:name=".helper.CustomAppBarActivity" />
-        <activity android:name=".view.auth.JoinActivity">
+        <activity android:name=".view.fragmentView.UserInfoActivity"></activity>
+        <activity android:name=".view.fragmentView.SearchActivity" />
+        <activity android:name=".view.fragmentView.BusanEventActivity" />
+        <activity android:name=".view.auth.LoginActivity" />
+        <activity android:name=".view.auth.JoinActivity" />
+        <activity android:name=".view.bar.AppBarActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
