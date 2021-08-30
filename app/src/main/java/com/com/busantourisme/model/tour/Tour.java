@@ -12,17 +12,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Tour {
-    int tourId;
-    String tourContnet;
-    String tourCount;
-    int tourImageUrl;
-    int tourName;
-    String tourTraffic;
-    String tourUrl;
+    private int tourId;
+    private String tourTitle;
+    private String tourAddr;
+    private String usageDay;
+    private String tourArea;
+    private String homepage;
+    private String thumb;
+    private String traffic;
+    private String tel;
+    private String lat;
+    private String lng;
 
-    public Tour(int tourId,int tourImageUrl,int tourName) {
-        this.tourId = tourId;
-        this.tourImageUrl = tourImageUrl;
-        this.tourName = tourName;
-    }
 }

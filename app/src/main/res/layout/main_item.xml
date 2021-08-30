@@ -10,7 +10,7 @@
 
 
     <ImageView
-        android:id="@+id/ivImg"
+        android:id="@+id/ivGlide"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +40,7 @@
         android:layout_marginBottom="16dp"
         android:textSize="15dp"
         android:text="Title"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
