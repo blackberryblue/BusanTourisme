@@ -6,15 +6,11 @@ import androidx.fragment.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.view.MenuItem;
-import android.view.SearchEvent;
 
 import com.com.busantourisme.R;
-import com.com.busantourisme.config.fragment.FragSearch;
-import com.com.busantourisme.config.fragment.FragUserInfo;
-import com.com.busantourisme.config.fragment.FragBusanEvent;
-import com.com.busantourisme.view.fragmentView.BusanEventActivity;
-import com.com.busantourisme.view.fragmentView.SearchActivity;
-import com.com.busantourisme.view.fragmentView.UserInfoActivity;
+import com.com.busantourisme.view.post.fragmentView.EventActivity;
+import com.com.busantourisme.view.post.fragmentView.SearchActivity;
+import com.com.busantourisme.view.post.fragmentView.UserInfoActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BottomHelper {
@@ -34,16 +30,16 @@ public class BottomHelper {
                         );
                         intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         context.startActivity(intent1);
-                    }else if(item.getItemId() == R.id.navSetting){
+                    }else if(item.getItemId() == R.id.navEvent){
                         Intent intent2 = new Intent(
                                 context,
-                                BusanEventActivity.class
+                                EventActivity.class
                         );
                         intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         context.startActivity(intent2);
 
 
-                    }else if (item.getItemId() == R.id.navMenu){
+                    }else if (item.getItemId() == R.id.navInfo){
                         Intent intent3 = new Intent(context, UserInfoActivity.class);
                         intent3.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         context.startActivity(intent3);

@@ -4,14 +4,22 @@
 
     <!-- "Mark Favorite", should appear as action button if possible -->
     <item
-        android:id="@+id/action_favorite"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="제목1"
+        android:id="@+id/itLogin"
+        android:title="login"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/itSign"
+        android:title="sign up"
         app:showAsAction="ifRoom"/>
 
     <!-- Settings, should always be in the overflow -->
-    <item android:id="@+id/action_settings"
-        android:title="제목2"
-        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/itHeaundae"
+        android:title="해운대"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/itGwangalli"
+        android:title="광안리"
+        app:showAsAction="never"/>
 
 </menu>

@@ -12,13 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BusanTourisme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.fragmentView.UserInfoActivity"></activity>
-        <activity android:name=".view.fragmentView.SearchActivity" />
-        <activity android:name=".view.fragmentView.BusanEventActivity" />
+        <activity android:name=".view.post.Tour.TourCommentActivity"
+            android:parentActivityName=".view.post.Tour.TourDetailActivity"/>
+        <activity android:name=".view.post.MainActivity" />
+        <activity android:name=".view.post.fragmentView.UserInfoActivity" />
+        <activity android:name=".view.post.fragmentView.SearchActivity" />
+        <activity android:name=".view.post.Tour.TourDetailActivity" />
         <activity android:name=".view.auth.LoginActivity" />
         <activity android:name=".view.auth.JoinActivity" />
         <activity android:name=".view.bar.AppBarActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.post.fragmentView.EventActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

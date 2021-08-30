@@ -34,11 +34,11 @@ public class AppBarActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_settings:
+            case R.id.itHeaundae:
                 Log.d(TAG, "onOptionsItemSelected: 제목1 클릭");
                 return true;
 
-            case R.id.action_favorite:
+            case R.id.itGwangalli:
                 Log.d(TAG, "onOptionsItemSelected: 제목2 클릭");
                 return true;
 
