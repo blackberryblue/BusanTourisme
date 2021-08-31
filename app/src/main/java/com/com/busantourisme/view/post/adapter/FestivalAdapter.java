@@ -12,23 +12,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.com.busantourisme.R;
 import com.com.busantourisme.model.festival.Festival;
-import com.com.busantourisme.view.post.fragmentView.EventActivity;
+import com.com.busantourisme.view.post.festival.FestivalActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 //2.어댑터 만들기
-public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder> {
+public class FestivalAdapter extends RecyclerView.Adapter<FestivalAdapter.MyViewHolder> {
 
     private static final String TAG = "MainAdapter";
     //MainAdapter 생성자에 접근하기 위한 변수 (mContext가 rvTours를 들고 있다)
-    private EventActivity mContext;
-    private EventAdapter eventAdapter = this;
+    private FestivalActivity mContext;
+    private FestivalAdapter eventAdapter = this;
     private List<Festival> festivals = new ArrayList<>();
 
 
-    public EventAdapter (EventActivity mContext) {
+    public FestivalAdapter(FestivalActivity mContext) {
         this.mContext = mContext;
 
     }
@@ -58,7 +58,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.MyViewHolder
     }
 
     @Override
-    public void onBindViewHolder( EventAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(FestivalAdapter.MyViewHolder holder, int position) {
             Festival festival = festivals.get(position);
             holder.setItem(festival);
     }

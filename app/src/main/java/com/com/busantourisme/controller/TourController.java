@@ -18,7 +18,12 @@ public class TourController {
 
     //관광지 요청
     public Call<CMRespDto<List<Tour>>> findAll(){
-        Log.d(TAG, "findAll: 쓰레드 통과");
+        Log.d(TAG, "findAll: 실행");
         return tourService.findAll();
+    }
+
+    public Call<CMRespDto<Tour>> findById(int tourId){
+        Log.d(TAG, "findAll: findOne");
+        return tourService.findById(tourId);
     }
 }

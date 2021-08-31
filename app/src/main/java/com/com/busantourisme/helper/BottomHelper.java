@@ -8,9 +8,9 @@ import android.content.Intent;
 import android.view.MenuItem;
 
 import com.com.busantourisme.R;
-import com.com.busantourisme.view.post.fragmentView.EventActivity;
-import com.com.busantourisme.view.post.fragmentView.SearchActivity;
-import com.com.busantourisme.view.post.fragmentView.UserInfoActivity;
+import com.com.busantourisme.view.post.festival.FestivalActivity;
+import com.com.busantourisme.view.post.etcView.SearchActivity;
+import com.com.busantourisme.view.post.etcView.UserInfoActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BottomHelper {
@@ -33,7 +33,7 @@ public class BottomHelper {
                     }else if(item.getItemId() == R.id.navEvent){
                         Intent intent2 = new Intent(
                                 context,
-                                EventActivity.class
+                                FestivalActivity.class
                         );
                         intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         context.startActivity(intent2);

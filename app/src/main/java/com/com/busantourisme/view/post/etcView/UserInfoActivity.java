@@ -1,6 +1,4 @@
-package com.com.busantourisme.view.post.fragmentView;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.com.busantourisme.view.post.etcView;
 
 import android.os.Bundle;
 

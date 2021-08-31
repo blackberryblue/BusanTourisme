@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.post.fragmentView.EventActivity">
+    tools:context=".view.post.festival.FestivalActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvEvent"

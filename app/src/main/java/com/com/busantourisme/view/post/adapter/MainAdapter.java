@@ -1,6 +1,8 @@
 package com.com.busantourisme.view.post.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.com.busantourisme.view.post.MainActivity;
 import com.com.busantourisme.R;
 import com.com.busantourisme.model.tour.Tour;
+import com.com.busantourisme.view.post.Tour.TourDetailActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +28,10 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
 
     private static final String TAG = "MainAdapter";
     //MainAdapter 생성자에 접근하기 위한 변수 (mContext가 rvTours를 들고 있다
-    private Context mContext;
-    private  MainAdapter mainAdapter = this;
-    private List<Tour> tours = new ArrayList<>();
+    private static Context mContext;
+    private MainAdapter mainAdapter = this;
+
+    private static List<Tour> tours = new ArrayList<>();
     private static final int ACTVINT_NUM = 1;
 
 
@@ -73,12 +77,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
         holder.setItem(tour);
 //        holder.setGlide(tour);
 
+
         Glide.with(mContext)
                 .load(tour.getThumb())
                 .centerCrop()
                 .placeholder(R.drawable.haeundae)
                 .into(holder.ivGlide);
-
 //
     }
 
@@ -94,7 +98,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
         private ImageView ivGlide;
         private TextView tvTitle;
         private Button btnDetail;
-        private MainActivity mContext;
+
 
 
         //앱 구동시 발동
@@ -103,13 +107,25 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
             ivGlide = itemView.findViewById(R.id.ivGlide);
             tvTitle = itemView.findViewById(R.id.tvTitle);
             btnDetail = itemView.findViewById(R.id.btnDetail);
-//            initLr();
+
+
+            initLr();
         }
 
        private void initLr(){
             //다른 클래스임으로 Tours를 찾을 수 없다.
             //super가 부모에서 변수로 받고 있어서 자식이 사용가능
-//            btnDetail.setOnClickListener(v->{});
+           btnDetail.setOnClickListener(v->{
+               Tour tour = tours.get(getAdapterPosition());
+               Log.d(TAG, "initLr: tour.getId() :"+tour.getTourId());
+               Intent intent = new Intent(
+                       mContext,
+                       TourDetailActivity.class
+                       );
+               Log.d(TAG, "initLr:intent 읽기 ");
+               intent.putExtra("tourId",tour.getTourId());
+               mContext.startActivity(intent);
+           });
 
         }
 
@@ -123,9 +139,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
 
         }
 
-        public void setGlide(Tour tour){
 
-
-        }
     }
 }
