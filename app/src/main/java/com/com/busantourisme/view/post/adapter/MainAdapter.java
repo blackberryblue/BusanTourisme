@@ -18,6 +18,7 @@ import com.com.busantourisme.view.post.MainActivity;
 import com.com.busantourisme.R;
 import com.com.busantourisme.model.tour.Tour;
 import com.com.busantourisme.view.post.Tour.TourDetailActivity;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +44,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
     }
 
     public MainAdapter(Context mContext) {
+        this.mContext = mContext;
     }
 
     //최초 등록,데이터 세팅
@@ -97,7 +99,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
 
         private ImageView ivGlide;
         private TextView tvTitle;
-        private Button btnDetail;
+        private MaterialButton btnDetail;
 
 
 

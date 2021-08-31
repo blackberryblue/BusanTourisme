@@ -37,7 +37,6 @@ public class MainActivity extends AppBarActivity implements InitMethod {
     //다른 클래스에 메모리 전달
     private Context mContext = MainActivity.this;
     private RecyclerView rvTorus;
-    private TourProvider tp;
     private static final int ACTIVITY_NUM = 1;
     private TourController tourController;
     private List<Tour> tours = new ArrayList<>();
@@ -52,6 +51,7 @@ public class MainActivity extends AppBarActivity implements InitMethod {
 
         onAppBarSettings(true);
         setupBottomNavigationView();
+
 
         init();
         initAdater();

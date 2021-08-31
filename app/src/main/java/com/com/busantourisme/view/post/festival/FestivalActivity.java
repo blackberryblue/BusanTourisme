@@ -3,16 +3,28 @@ package com.com.busantourisme.view.post.festival;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.com.busantourisme.InitMethod;
 import com.com.busantourisme.R;
+import com.com.busantourisme.controller.Dto.CMRespDto;
+import com.com.busantourisme.controller.FestivalController;
 import com.com.busantourisme.helper.BottomHelper;
+import com.com.busantourisme.model.festival.Festival;
+import com.com.busantourisme.model.tour.Tour;
 import com.com.busantourisme.view.bar.AppBarActivity;
 import com.com.busantourisme.view.post.adapter.FestivalAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FestivalActivity extends AppBarActivity implements InitMethod {
 
@@ -20,8 +32,12 @@ public class FestivalActivity extends AppBarActivity implements InitMethod {
     private static final String TAG = "EventActivity";
     private FestivalActivity mContext = this;
     private RecyclerView rvEvent;
+    private FestivalController festivalController;
+
     private RecyclerView.LayoutManager rvLayoutManager;
-    private FestivalAdapter eventAdapter;
+    private FestivalAdapter festivalAdapter;
+
+    private List<Festival> festivals =  new ArrayList<>();
     private static final int ACTIVITY_NUM = 1;
 
     @Override
@@ -32,11 +48,15 @@ public class FestivalActivity extends AppBarActivity implements InitMethod {
         onAppBarSettings(true);
         setupBottomNavigationView();
 
+        init();
+        initAdater();
+        initData();
     }
 
 
     @Override
     public void init() {
+        festivalController = new FestivalController();
         rvEvent = findViewById(R.id.rvEvent);
 
     }
@@ -56,13 +76,26 @@ public class FestivalActivity extends AppBarActivity implements InitMethod {
     public void initAdater() {
         rvLayoutManager = new LinearLayoutManager(mContext,RecyclerView.VERTICAL,false);
         rvEvent.setLayoutManager(rvLayoutManager);
-        eventAdapter = new FestivalAdapter(mContext);
-        rvEvent.setAdapter(eventAdapter);
+        festivalAdapter = new FestivalAdapter(mContext,festivals);
+        rvEvent.setAdapter(festivalAdapter);
     }
 
 
     @Override
     public void initData() {
+
+        festivalController.findAll().enqueue(new Callback<CMRespDto<List<Festival>>>() {
+            @Override
+            public void onResponse(Call<CMRespDto<List<Festival>>> call, Response<CMRespDto<List<Festival>>> response) {
+                CMRespDto<List<Festival>> cm = response.body();
+                festivalAdapter.addItems(cm.getData());
+            }
+
+            @Override
+            public void onFailure(Call<CMRespDto<List<Festival>>> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
 
     }
 

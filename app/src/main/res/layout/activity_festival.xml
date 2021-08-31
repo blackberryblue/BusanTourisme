@@ -8,6 +8,8 @@
     android:orientation="vertical"
     tools:context=".view.post.festival.FestivalActivity">
 
+    <include layout="@layout/toolbar_main"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvEvent"
         android:layout_width="match_parent"
@@ -15,5 +17,6 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp" />
 
+    <include layout="@layout/activity_bottom"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

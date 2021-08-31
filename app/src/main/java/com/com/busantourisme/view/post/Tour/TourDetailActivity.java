@@ -1,6 +1,7 @@
 package com.com.busantourisme.view.post.Tour;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -17,6 +18,9 @@ import com.com.busantourisme.helper.BottomHelper;
 import com.com.busantourisme.model.tour.Tour;
 import com.com.busantourisme.view.bar.AppBarActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.textview.MaterialTextView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -27,9 +31,12 @@ public class TourDetailActivity extends AppBarActivity implements InitMethod {
     private static final String TAG = "TourDetailActivity";
     private TourDetailActivity mContext = TourDetailActivity.this;
     private ImageView ivImg,ivFav,ivComment;
-    private TextView tvTitle,tvContnet,tvCountFav,tvCountCom;
+    private TextView tvTitle,tvCountFav,tvCountCom,tvHomepage;
+    private MaterialTextView mtvTraffic,mtvAdd;
+    private MaterialButton mbtnCall;
     private static final int ACTIVITY_NUM = 1;
     private TourController tourController;
+    private static int callNum;
     private int tourId;
 
 
@@ -66,8 +73,11 @@ public class TourDetailActivity extends AppBarActivity implements InitMethod {
         ivFav = findViewById(R.id.ivFav);
         ivComment = findViewById(R.id.ivComment);
         tvTitle = findViewById(R.id.tvTitle);
-        tvContnet = findViewById(R.id.tvContent);
+        mtvTraffic = findViewById(R.id.mtvTraffic);
         tvCountCom = findViewById(R.id.tvCounCom);
+        mbtnCall = findViewById(R.id.mbtnCall);
+        tvHomepage = findViewById(R.id.tvHomePage);
+        mtvAdd = findViewById(R.id.mtvAdd);
     }
 
     @Override
@@ -80,6 +90,8 @@ public class TourDetailActivity extends AppBarActivity implements InitMethod {
             );
            startActivity(intent);
         });
+
+
     }
 
     @Override
@@ -101,7 +113,13 @@ public class TourDetailActivity extends AppBarActivity implements InitMethod {
 
                 CMRespDto<Tour> cm = response.body();
                 tvTitle.append(cm.getData().getTourTitle());
-                tvContnet.append(cm.getData().getTraffic());
+                mtvTraffic.append(cm.getData().getTraffic());
+                mtvAdd.append(cm.getData().getTourAddr());
+                tvHomepage.append(cm.getData().getHomepage());
+                mbtnCall.setOnClickListener(v->{
+                    Intent intentCall = new Intent(Intent.ACTION_CALL, Uri.parse(cm.getData().getTel()));
+                    startActivity(intentCall);
+                });
 
 
                 Glide.with(mContext)

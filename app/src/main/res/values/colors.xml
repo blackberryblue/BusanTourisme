@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="main_blue">#47A2EA</color>
-    <color name="sub_blue">#4A5DC6</color>
-    <color name="third_blue">#040B47</color>
-    <color name="teal_200">#FF03DAC5</color>
+    <color name="sub_blue">#001CB5</color>
+    <color name="third_blue">#031295</color>
+    <color name="four_blue">#C4CAED</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
