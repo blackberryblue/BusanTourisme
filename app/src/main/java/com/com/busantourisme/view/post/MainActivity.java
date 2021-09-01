@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.com.busantourisme.InitMethod;
 import com.com.busantourisme.R;
-import com.com.busantourisme.config.Provider.TourProvider;
 import com.com.busantourisme.controller.Dto.CMRespDto;
 import com.com.busantourisme.controller.TourController;
 import com.com.busantourisme.helper.BottomHelper;
@@ -47,7 +46,7 @@ public class MainActivity extends AppBarActivity implements InitMethod {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_rvmain);
 
         onAppBarSettings(true);
         setupBottomNavigationView();

@@ -3,11 +3,7 @@
     package="com.com.busantourisme">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
-    //전화 걸기
     <uses-permission android:name="android.permission.CALL_PHONE" />
-
-
 
     <application
         android:allowBackup="true"
@@ -17,13 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BusanTourisme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.post.Tour.TourCommentActivity"
-            android:parentActivityName=".view.post.Tour.TourDetailActivity"/>
+        <activity android:name=".view.post.festival.FestivalDetailActivity"></activity>
+        <activity
+            android:name=".view.post.Tour.TourCommentActivity"
+            android:parentActivityName=".view.post.Tour.TourDetailActivity" />
         <activity android:name=".view.post.festival.FestivalActivity" />
         <activity android:name=".view.post.etcView.UserInfoActivity" />
         <activity android:name=".view.post.etcView.SearchActivity" />
-        <activity android:name=".view.post.Tour.TourDetailActivity"
-            android:parentActivityName=".view.post.MainActivity"/>
+        <activity
+            android:name=".view.post.Tour.TourDetailActivity"
+            android:parentActivityName=".view.post.MainActivity" />
         <activity android:name=".view.auth.LoginActivity" />
         <activity android:name=".view.auth.JoinActivity" />
         <activity android:name=".view.bar.AppBarActivity" />

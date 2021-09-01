@@ -17,9 +17,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.com.busantourisme.R;
 import com.com.busantourisme.model.festival.Festival;
+import com.com.busantourisme.model.festival.FestivalDetail;
 import com.com.busantourisme.service.FestivalService;
 import com.com.busantourisme.view.post.Tour.TourDetailActivity;
 import com.com.busantourisme.view.post.festival.FestivalActivity;
+import com.com.busantourisme.view.post.festival.FestivalDetailActivity;
 import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
@@ -29,10 +31,10 @@ import java.util.List;
 //2.어댑터 만들기
 public class FestivalAdapter extends RecyclerView.Adapter<FestivalAdapter.MyViewHolder> {
 
-    private static final String TAG = "MainAdapter";
+    private static final String TAG = "FestivalAdapter";
     //MainAdapter 생성자에 접근하기 위한 변수 (mContext가 rvTours를 들고 있다)
     private static Context mContext;
-    private FestivalAdapter eventAdapter = this;
+    private FestivalAdapter festivalAdapter = this;
 
     private static List<Festival> festivals = new ArrayList<>();
     private static final int ACTVINT_NUM = 1;
@@ -117,13 +119,13 @@ public class FestivalAdapter extends RecyclerView.Adapter<FestivalAdapter.MyView
             //super가 부모에서 변수로 받고 있어서 자식이 사용가능
            mbtnDetail.setOnClickListener(v->{
                Festival festival = festivals.get(getAdapterPosition());
-
                Intent intent = new Intent(
                        mContext,
-                       FestivalActivity.class
+                       FestivalDetailActivity.class
                );
                Log.d(TAG, "initLr:intent 읽기 ");
-               intent.putExtra("tourId",festival.getFestivalId());
+               intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               intent.putExtra("festivalId",festival.getFestivalId());
                mContext.startActivity(intent);
            });
 

@@ -28,8 +28,7 @@ import retrofit2.Response;
 
 public class FestivalActivity extends AppBarActivity implements InitMethod {
 
-
-    private static final String TAG = "EventActivity";
+    private static final String TAG = "FestivalActivity";
     private FestivalActivity mContext = this;
     private RecyclerView rvEvent;
     private FestivalController festivalController;

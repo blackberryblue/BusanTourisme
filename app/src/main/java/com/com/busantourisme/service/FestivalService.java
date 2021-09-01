@@ -20,8 +20,8 @@ public interface FestivalService {
     Call<CMRespDto<List<Festival>>> findAll();
 
     //Detail 화면으로 갈때
-    @GET("/festival/{id}")
-    Call<CMRespDto<Festival>> findById(@Path("id") int id);
+    @GET("/festival/{festivalId}")
+    Call<CMRespDto<Festival>> findById(@Path("festivalId") int festivalId);
 
 
 
@@ -35,7 +35,7 @@ public interface FestivalService {
 
     Retrofit retrofit = new Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("http://192.168.35.225:8080")
+            .baseUrl("http://192.168.35.153:8080")
 //            .client(client)
             .build();
 

@@ -38,7 +38,7 @@ public interface TourService {
 
     Retrofit retrofit = new Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("http://192.168.35.225:8080")
+            .baseUrl("http://192.168.35.153:8080")
 //            .client(client)
             .build();
 
