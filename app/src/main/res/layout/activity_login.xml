@@ -9,8 +9,20 @@
     android:layout_height="match_parent"
     tools:context=".view.auth.LoginActivity">
 
+    <TextView
+        android:id="@+id/tvTitle"
+        android:paddingTop="100dp"
+        android:layout_gravity="center"
+        android:textSize="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/tway_sky"
+        android:textColor="@color/sub_blue"
+        android:text="Loign Go!"/>
+
+
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:paddingTop="200dp"
+        android:paddingTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -74,6 +86,16 @@
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:lottie_autoPlay="true"
+            android:layout_gravity="center"
+            app:lottie_fileName="login_page.json"
+            app:lottie_loop="true" />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
