@@ -460,3 +460,4 @@ public class TourDetailActivity extends AppBarActivity implements InitMethod {
 
 
 }
+
