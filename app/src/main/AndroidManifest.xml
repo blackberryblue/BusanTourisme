@@ -2,7 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.com.busantourisme">
 
+
+    //카카오 연동
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Required only when requesting background location access on
+       Android 10 (API level 29) and higher. -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+   //인터넷 허용
     <uses-permission android:name="android.permission.INTERNET" />
+
+    //전화연결
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
@@ -12,6 +23,7 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/Theme.BusanTourisme"
         android:usesCleartextTraffic="true">
         <activity android:name=".view.get.MainActivity"></activity>

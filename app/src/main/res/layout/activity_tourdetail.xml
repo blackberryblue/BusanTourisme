@@ -92,6 +92,15 @@
                 android:layout_height="wrap_content"
                 android:text="100"/>
 
+            <View
+                android:layout_width="200dp"
+                android:layout_height="50dp"/>
+
+            <item android:id="@+id/itNavi"
+                android:title="myInfo"
+                android:icon="@drawable/ic_navigation"/>
+
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
 
