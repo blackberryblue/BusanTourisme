@@ -27,7 +27,8 @@ public interface TourService {
     @GET("/tour/{tourId}")
     Call<CMRespDto<Tour>> findById(@Path("tourId") int tourId);
 
-
+    @GET("/tour/area/{area}")
+    Call<CMRespDto<List<Tour>>> findArea(@Path("area") String area);
 
 // .addInterceptor(new SessionInterceptor()).build();
 //    OkHttpClient client = new OkHttpClient.Builder()
@@ -38,7 +39,7 @@ public interface TourService {
 
     Retrofit retrofit = new Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("http://192.168.35.153:8080")
+            .baseUrl("http://10.100.202.79:8080")
 //            .client(client)
             .build();
 

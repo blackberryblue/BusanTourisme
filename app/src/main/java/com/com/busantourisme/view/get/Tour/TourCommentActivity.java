@@ -1,4 +1,4 @@
-package com.com.busantourisme.view.post.Tour;
+package com.com.busantourisme.view.get.Tour;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,7 +12,7 @@ import com.com.busantourisme.R;
 import com.com.busantourisme.controller.FestivalController;
 import com.com.busantourisme.helper.BottomHelper;
 import com.com.busantourisme.view.bar.AppBarActivity;
-import com.com.busantourisme.view.post.adapter.CommentAdapter;
+import com.com.busantourisme.view.get.adapter.CommentAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
@@ -38,7 +38,7 @@ public class TourCommentActivity extends AppBarActivity implements InitMethod {
         init();
         initLr();
         initData();
-        initAdater();
+        initAdapter();
         initSetting();
     }
 
@@ -62,7 +62,7 @@ public class TourCommentActivity extends AppBarActivity implements InitMethod {
     }
 
     @Override
-    public void initAdater() {
+    public void initAdapter() {
         rvLayoutManager = new LinearLayoutManager(mContext,RecyclerView.VERTICAL, false);
         rvEvent.setLayoutManager(rvLayoutManager);
         commentAdapter = new CommentAdapter(mContext);

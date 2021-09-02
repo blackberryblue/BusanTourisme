@@ -1,4 +1,4 @@
-package com.com.busantourisme.view.post.etcView;
+package com.com.busantourisme.view.get.etcView;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -15,11 +15,19 @@
 
     <!-- Settings, should always be in the overflow -->
     <item android:id="@+id/itHeaundae"
-        android:title="해운대"
+        android:title="해운대구"
         app:showAsAction="never"/>
 
-    <item android:id="@+id/itGwangalli"
-        android:title="광안리"
+    <item android:id="@+id/itJingu"
+        android:title="부산진구"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/itNamgu"
+        android:title="남구"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/itGijjang"
+        android:title="기장군"
         app:showAsAction="never"/>
 
 </menu>

@@ -9,7 +9,7 @@ public interface InitMethod {
 
     void initSetting(); // 각종 기타 세팅
 
-    default void initAdater() {
+    default void initAdapter() {
     }
 
     default void initData() {

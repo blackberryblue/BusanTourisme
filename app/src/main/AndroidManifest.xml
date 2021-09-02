@@ -9,24 +9,29 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BusanTourisme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.post.festival.FestivalDetailActivity"></activity>
+        <activity android:name=".view.get.MainActivity"></activity>
+        <activity android:name=".view.get.area.HeaundaeActivity" />
+        <activity android:name=".view.get.area.JinguActivity" />
+        <activity android:name=".view.get.area.GijangActivity" />
+        <activity android:name=".view.get.festival.FestivalDetailActivity" />
         <activity
-            android:name=".view.post.Tour.TourCommentActivity"
-            android:parentActivityName=".view.post.Tour.TourDetailActivity" />
-        <activity android:name=".view.post.festival.FestivalActivity" />
-        <activity android:name=".view.post.etcView.UserInfoActivity" />
-        <activity android:name=".view.post.etcView.SearchActivity" />
+            android:name=".view.get.Tour.TourCommentActivity"
+            android:parentActivityName=".view.get.Tour.TourDetailActivity" />
+        <activity android:name=".view.get.festival.FestivalActivity" />
+        <activity android:name=".view.get.etcView.UserInfoActivity" />
+        <activity android:name=".view.get.etcView.SearchActivity" />
         <activity
-            android:name=".view.post.Tour.TourDetailActivity"
-            android:parentActivityName=".view.post.MainActivity" />
+            android:name=".view.get.Tour.TourDetailActivity"
+            android:parentActivityName=".view.get.MainActivity" />
         <activity android:name=".view.auth.LoginActivity" />
         <activity android:name=".view.auth.JoinActivity" />
         <activity android:name=".view.bar.AppBarActivity" />
-        <activity android:name=".view.post.MainActivity">
+        <activity android:name=".LaunchingAppAcitivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

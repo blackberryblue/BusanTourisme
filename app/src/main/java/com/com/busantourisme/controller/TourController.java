@@ -26,4 +26,10 @@ public class TourController {
         Log.d(TAG, "findAll: findOne");
         return tourService.findById(tourId);
     }
+
+    //해운대 관광지
+    public Call<CMRespDto<List<Tour>>> findArea(String area){
+        Log.d(TAG, "findHeaundae: 실행");
+        return tourService.findArea(area);
+    }
 }

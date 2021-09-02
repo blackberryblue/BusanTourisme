@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="730dp"
     android:orientation="vertical"
-    tools:context=".view.post.festival.FestivalDetailActivity">
+    tools:context=".view.get.festival.FestivalDetailActivity">
     <include layout="@layout/toolbar_main"/>
 
 

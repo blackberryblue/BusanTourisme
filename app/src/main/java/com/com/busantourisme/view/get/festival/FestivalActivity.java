@@ -1,9 +1,8 @@
-package com.com.busantourisme.view.post.festival;
+package com.com.busantourisme.view.get.festival;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,9 +13,8 @@ import com.com.busantourisme.controller.Dto.CMRespDto;
 import com.com.busantourisme.controller.FestivalController;
 import com.com.busantourisme.helper.BottomHelper;
 import com.com.busantourisme.model.festival.Festival;
-import com.com.busantourisme.model.tour.Tour;
 import com.com.busantourisme.view.bar.AppBarActivity;
-import com.com.busantourisme.view.post.adapter.FestivalAdapter;
+import com.com.busantourisme.view.get.adapter.FestivalAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -48,7 +46,7 @@ public class FestivalActivity extends AppBarActivity implements InitMethod {
         setupBottomNavigationView();
 
         init();
-        initAdater();
+        initAdapter();
         initData();
     }
 
@@ -72,7 +70,7 @@ public class FestivalActivity extends AppBarActivity implements InitMethod {
     }
 
     @Override
-    public void initAdater() {
+    public void initAdapter() {
         rvLayoutManager = new LinearLayoutManager(mContext,RecyclerView.VERTICAL,false);
         rvEvent.setLayoutManager(rvLayoutManager);
         festivalAdapter = new FestivalAdapter(mContext,festivals);

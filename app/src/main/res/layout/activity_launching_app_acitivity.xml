@@ -5,18 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".view.post.festival.FestivalActivity">
+    tools:context=".LaunchingAppAcitivity">
 
-    <include layout="@layout/toolbar_main"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvEvent"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
         android:layout_width="match_parent"
-        android:layout_height="620dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp" />
-
-    <include layout="@layout/activity_bottom"/>
+        android:layout_height="match_parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="welcome_blue.json"
+        app:lottie_loop="true" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

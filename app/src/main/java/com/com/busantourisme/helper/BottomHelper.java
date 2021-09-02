@@ -8,9 +8,9 @@ import android.content.Intent;
 import android.view.MenuItem;
 
 import com.com.busantourisme.R;
-import com.com.busantourisme.view.post.festival.FestivalActivity;
-import com.com.busantourisme.view.post.etcView.SearchActivity;
-import com.com.busantourisme.view.post.etcView.UserInfoActivity;
+import com.com.busantourisme.view.get.festival.FestivalActivity;
+import com.com.busantourisme.view.get.etcView.SearchActivity;
+import com.com.busantourisme.view.get.etcView.UserInfoActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BottomHelper {

@@ -15,6 +15,10 @@ import android.view.MenuItem;
 import com.com.busantourisme.R;
 import com.com.busantourisme.view.auth.JoinActivity;
 import com.com.busantourisme.view.auth.LoginActivity;
+import com.com.busantourisme.view.get.area.GijangActivity;
+import com.com.busantourisme.view.get.area.HeaundaeActivity;
+import com.com.busantourisme.view.get.area.JinguActivity;
+import com.com.busantourisme.view.get.area.NamguActivity;
 
 public class AppBarActivity extends AppCompatActivity {
 
@@ -53,9 +57,33 @@ public class AppBarActivity extends AppCompatActivity {
                 startActivity(intent2);
                 return true;
             case R.id.itHeaundae:
-                Log.d(TAG, "onOptionsItemSelected: 제목2 클릭");
+                Intent intent3 = new Intent(
+                        mContext,
+                        HeaundaeActivity.class
+                );
+                startActivity(intent3);
                 return true;
-
+            case R.id.itJingu:
+                Intent intent4 = new Intent(
+                        mContext,
+                        JinguActivity.class
+                );
+                startActivity(intent4);
+                return true;
+            case R.id.itNamgu:
+                Intent intent5 = new Intent(
+                        mContext,
+                        NamguActivity.class
+                );
+                startActivity(intent5);
+                return true;
+            case R.id.itGijjang:
+                Intent intent6 = new Intent(
+                        mContext,
+                        GijangActivity.class
+                );
+                startActivity(intent6);
+                return true;
 
             default:
 

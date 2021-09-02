@@ -1,4 +1,4 @@
-package com.com.busantourisme.view.post.adapter;
+package com.com.busantourisme.view.get.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.com.busantourisme.R;
 import com.com.busantourisme.model.tour.TourDetail;
-import com.com.busantourisme.view.post.Tour.TourCommentActivity;
+import com.com.busantourisme.view.get.Tour.TourCommentActivity;
 
 import java.util.ArrayList;
 import java.util.List;

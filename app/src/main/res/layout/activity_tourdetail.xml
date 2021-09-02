@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="730dp"
     android:orientation="vertical"
-    tools:context=".view.post.Tour.TourDetailActivity">
+    tools:context=".view.get.Tour.TourDetailActivity">
 
     <include layout="@layout/toolbar_main"/>
 

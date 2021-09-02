@@ -1,7 +1,6 @@
-package com.com.busantourisme.view.post.Tour;
+package com.com.busantourisme.view.get.festival;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -13,10 +12,11 @@ import com.bumptech.glide.Glide;
 import com.com.busantourisme.InitMethod;
 import com.com.busantourisme.R;
 import com.com.busantourisme.controller.Dto.CMRespDto;
-import com.com.busantourisme.controller.TourController;
+import com.com.busantourisme.controller.FestivalController;
 import com.com.busantourisme.helper.BottomHelper;
-import com.com.busantourisme.model.tour.Tour;
+import com.com.busantourisme.model.festival.Festival;
 import com.com.busantourisme.view.bar.AppBarActivity;
+import com.com.busantourisme.view.get.Tour.TourCommentActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
@@ -25,17 +25,18 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class TourDetailActivity extends AppBarActivity implements InitMethod {
+public class FestivalDetailActivity extends AppBarActivity implements InitMethod {
 
-    private static final String TAG = "TourDetailActivity";
-    private TourDetailActivity mContext = TourDetailActivity.this;
-    private TourController tourController;
+
+    private static final String TAG = "FestivalDetailActivity";
+    private FestivalDetailActivity mContext = new FestivalDetailActivity();
+    private FestivalController festivalController;
     private ImageView ivImg,ivFav,ivComment;
     private TextView tvTitle,tvCountFav,tvCountCom,tvHomepage;
     private MaterialTextView mtvTraffic,mtvAdd;
     private MaterialButton mbtnCall;
     private static final int ACTIVITY_NUM = 1;
-    private int tourId;
+    private int festivalId;
 
 
     @Override
@@ -45,31 +46,18 @@ public class TourDetailActivity extends AppBarActivity implements InitMethod {
         Log.d(TAG, "onResume: intitData 실행?");
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tourdetail);
+        setContentView(R.layout.activity_festivaldetail);
         onAppBarSettings(true);
         setupBottomNavigationView();
-
-
-        init();
-        Log.d(TAG, "onCreate: init실행?");
-        initLr();
-        Log.d(TAG, "onCreate: initLr실행?");
-        initSetting();
-        Log.d(TAG, "onCreate: initSetting실행?");
-
-
-
-
-
-
     }
 
     @Override
     public void init() {
-        tourController = new TourController();
+        festivalController = new FestivalController();
         ivImg = findViewById(R.id.ivImg);
         ivFav = findViewById(R.id.ivFav);
         ivComment = findViewById(R.id.ivComment);
@@ -79,62 +67,56 @@ public class TourDetailActivity extends AppBarActivity implements InitMethod {
         mbtnCall = findViewById(R.id.mbtnCall);
         tvHomepage = findViewById(R.id.tvHomePage);
         mtvAdd = findViewById(R.id.mtvAdd);
+
     }
 
     @Override
     public void initLr() {
+
         ivComment.setOnClickListener(v->{
 
             Intent intent = new Intent(
                     mContext,
                     TourCommentActivity.class
             );
-           startActivity(intent);
+            startActivity(intent);
         });
-
 
     }
 
     @Override
     public void initSetting() {
-
-
         Intent getIntent = getIntent();
-        tourId = getIntent.getIntExtra("tourId",0);
-        if(tourId == 0) finish();
+        festivalId = getIntent.getIntExtra("festivalId",0);
+        if(festivalId == 0) finish();
+
     }
 
     @Override
     public void initData() {
-        tourController.findById(tourId).enqueue(new Callback<CMRespDto<Tour>>() {
-
+        festivalController.findById(festivalId).enqueue(new Callback<CMRespDto<Festival>>() {
             @Override
-            public void onResponse(Call<CMRespDto<Tour>> call, Response<CMRespDto<Tour>> response) {
-
-                CMRespDto<Tour> cm = response.body();
-                tvTitle.append(cm.getData().getTourTitle());
+            public void onResponse(Call<CMRespDto<Festival>> call, Response<CMRespDto<Festival>> response) {
+                CMRespDto<Festival> cm = response.body();
+                tvTitle.append(cm.getData().getFestivalTitle());
                 mtvTraffic.append(cm.getData().getTraffic());
-                mtvAdd.append(cm.getData().getTourAddr());
+                mtvAdd.append(cm.getData().getFestivalAddr());
                 tvHomepage.append(cm.getData().getHomepage());
-                mbtnCall.setOnClickListener(v->{
-                    Intent intentCall = new Intent(Intent.ACTION_CALL, Uri.parse(cm.getData().getTel()));
-                    startActivity(intentCall);
-                });
-
 
                 Glide.with(mContext)
                         .load(cm.getData().getThumb())
                         .centerCrop()
                         .placeholder(R.drawable.haeundae)
                         .into(ivImg);
+
             }
 
             @Override
-            public void onFailure(Call<CMRespDto<Tour>> call, Throwable t) {
+            public void onFailure(Call<CMRespDto<Festival>> call, Throwable t) {
                 t.printStackTrace();
-
             }
         });
+
     }
 
     private void setupBottomNavigationView() {
